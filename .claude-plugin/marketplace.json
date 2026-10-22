@@ -1,0 +1,5 @@
+{
+  "name": "claude-mod-luxafor",
+  "owner": { "name": "Kenan Bendz" },
+  "plugins": [{ "name": "lux-mood", "source": "./" }]
+}
