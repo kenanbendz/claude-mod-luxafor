@@ -37,6 +37,16 @@ In the desktop app, where `/plugin` does not run: click **+** next to the prompt
 
 While this repository is private, installing needs read access to it on GitHub and a git credential for github.com on the machine (an SSH key, or `gh auth login` followed by `gh auth setup-git`).
 
+## Updating
+
+The plugin has no pinned version, so every commit on `main` is a new version. To receive them automatically, turn on auto-update for this marketplace once: in a terminal session run `/plugin`, open **Marketplaces**, select `claude-mod-luxafor`, and choose **Enable auto-update**. Claude Code then refreshes it in the background shortly after each session starts, and the new version loads on the next launch.
+
+Without auto-update, pull the latest with:
+
+```bash
+claude plugin update lux-mood@claude-mod-luxafor
+```
+
 ## How it works
 
 `hooks/register.ts` hooks the engine's session start, turn start, tool calls, permission notifications, turn complete and session end. Each state change runs `bin/lux mood <effect>`, which stops the effect that is running and starts the next one detached from Claude Code. A file lock in the temp folder is how it finds the running one, so it only ever stops its own kind. Bursts of changes collapse to the latest state, one switch at a time, so two effects never fight for the light.

@@ -1,8 +1,9 @@
 {
   "name": "lux-mood",
-  "version": "0.1.0",
   "description": "Lights up a Luxafor Flag with what Claude Code is doing: thinking, editing, running tools, waiting for you, idle. Prebuilt, nothing to install.",
-  "author": { "name": "Kenan Bendz" },
+  "author": {
+    "name": "Kenan Bendz"
+  },
   "license": "MIT",
   "homepage": "https://github.com/kenanbendz/claude-mod-luxafor"
 }
